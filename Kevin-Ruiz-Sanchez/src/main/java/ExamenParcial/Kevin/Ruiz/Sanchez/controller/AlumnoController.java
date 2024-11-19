@@ -18,23 +18,22 @@ import ExamenParcial.Kevin.Ruiz.Sanchez.services.AlumnoService;
 @RestController
 @RequestMapping("/api/alumno")
 public class AlumnoController {
-    
-     @Autowired
+
+    @Autowired
     AlumnoService alumnoService;
 
     @GetMapping("/findAll")
-    public List<AlumnoModel> FindAll(){
-        List<AlumnoModel> lista = alumnoService.findAll();
-        return lista;
+    public List<AlumnoModel> findAll() {
+        return alumnoService.findAll();
     }
 
     @GetMapping("/getById")
-    public AlumnoModel getById(@RequestParam Integer id) {
+    public AlumnoModel getById(@RequestParam("id") Integer id) {
         return alumnoService.findById(id);
     }
 
     @PostMapping("/create")
-    public AlumnoModel create(@RequestBody AlumnoModel model){   
+    public AlumnoModel create(@RequestBody AlumnoModel model) {
         return alumnoService.add(model);
     }
 
@@ -44,8 +43,7 @@ public class AlumnoController {
     }
 
     @DeleteMapping("/delete")
-    public boolean delete(Integer id) {
+    public boolean delete(@RequestParam("id") Integer id) {
         return alumnoService.delete(id);
     }
-
 }
