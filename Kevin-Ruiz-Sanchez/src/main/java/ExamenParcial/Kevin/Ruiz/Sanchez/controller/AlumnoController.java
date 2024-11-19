@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ExamenParcial.Kevin.Ruiz.Sanchez.model.AlumnoModel;
 import ExamenParcial.Kevin.Ruiz.Sanchez.services.AlumnoService;
 
 @RestController
-@RequestMapping("Alumno")
+@RequestMapping("/api/alumno")
 public class AlumnoController {
     
      @Autowired
@@ -28,7 +29,7 @@ public class AlumnoController {
     }
 
     @GetMapping("/getById")
-    public AlumnoModel getById(int id) {
+    public AlumnoModel getById(@RequestParam Integer id) {
         return alumnoService.findById(id);
     }
 
@@ -43,7 +44,7 @@ public class AlumnoController {
     }
 
     @DeleteMapping("/delete")
-    public boolean delete(int id) {
+    public boolean delete(Integer id) {
         return alumnoService.delete(id);
     }
 

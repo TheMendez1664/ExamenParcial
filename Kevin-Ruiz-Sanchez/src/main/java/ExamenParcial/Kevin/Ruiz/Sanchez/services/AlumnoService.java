@@ -1,5 +1,6 @@
 package ExamenParcial.Kevin.Ruiz.Sanchez.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,12 @@ public class AlumnoService implements IAlumnoService{
 
     @Override
     public List<AlumnoModel> findAll() {
+        try {
         return (List<AlumnoModel>)repository.findAll();
+        } catch (Exception e) {
+        e.printStackTrace(); // Imprime el error en los logs
+        return new ArrayList<>(); // Devuelve una lista vacía si ocurre un error
+    }
     }
 
     @Override
