@@ -12,37 +12,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ExamenParcial.Kevin.Ruiz.Sanchez.config.ApiRoutes;
 import ExamenParcial.Kevin.Ruiz.Sanchez.model.AlumnoModel;
 import ExamenParcial.Kevin.Ruiz.Sanchez.services.AlumnoService;
 
 @RestController
-@RequestMapping("/api/alumno")
+@RequestMapping(ApiRoutes.API_ALUMNO)
 public class AlumnoController {
 
     @Autowired
     AlumnoService alumnoService;
 
-    @GetMapping("/findAll")
+    @GetMapping(ApiRoutes.FIND_ALL)
     public List<AlumnoModel> findAll() {
         return alumnoService.findAll();
     }
 
-    @GetMapping("/getById")
+    @GetMapping(ApiRoutes.GET_BY_ID)
     public AlumnoModel getById(@RequestParam("id") Integer id) {
         return alumnoService.findById(id);
     }
 
-    @PostMapping("/create")
+    @PostMapping(ApiRoutes.CREATE)
     public AlumnoModel create(@RequestBody AlumnoModel model) {
         return alumnoService.add(model);
     }
 
-    @PutMapping("/update")
+    @PutMapping(ApiRoutes.UPDATE)
     public AlumnoModel update(@RequestBody AlumnoModel model) {
         return alumnoService.update(model);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping(ApiRoutes.DELETE)
     public boolean delete(@RequestParam("id") Integer id) {
         return alumnoService.delete(id);
     }

@@ -1,0 +1,1 @@
+2024-11-19 09:01:14 [http-nio-8081-exec-1] ERROR E.K.R.Sanchez.services.AlumnoService - Error al buscar el alumno con id 999: Alumno no encontrado con ID: 999
