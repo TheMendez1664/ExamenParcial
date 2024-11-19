@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import ExamenParcial.Kevin.Ruiz.Sanchez.config.ApiRoutes;
 import ExamenParcial.Kevin.Ruiz.Sanchez.model.AlumnoModel;
 import ExamenParcial.Kevin.Ruiz.Sanchez.services.AlumnoService;
+import ExamenParcial.Kevin.Ruiz.Sanchez.config.ApiRoutes;
 
 @RestController
 @RequestMapping(ApiRoutes.API_ALUMNO)
